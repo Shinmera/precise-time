@@ -1,0 +1,15 @@
+# About Precise-Time
+This is a small library hooking into the operating system to give more precise timing information than implementations usually provide via ``get-universal-time`` or ``get-internal-real-time``.
+
+## How To
+The usage is straightforward:
+
+``get-precise-time`` returns the precise system time as two values:
+- A universal-time timestamp
+- Sub-seconds in ``PRECISE-TIME-UNITS-PER-SECOND``
+
+``get-monotonic-time`` returns a precise monotonic clock as two values:
+- Seconds since an arbitrary epoch
+- Sub-seconds in ``MONTOONIC-TIME-UNITSPER-SECOND``
+
+And that's all!
