@@ -4,8 +4,8 @@
   (secs #+64-bit :int64 #-64-bit :int32)
   (nsecs :long))
 
-(define-constant PRECISE-TIME-UNITS-PER-SECOND 10000000000)
-(define-constant MONOTONIC-TIME-UNITS-PER-SECOND 10000000000)
+(define-constant PRECISE-TIME-UNITS-PER-SECOND 1000000000)
+(define-constant MONOTONIC-TIME-UNITS-PER-SECOND 1000000000)
 
 (define-implementation get-precise-time ()
   (cffi:with-foreign-objects ((timespec '(:struct timespec)))
