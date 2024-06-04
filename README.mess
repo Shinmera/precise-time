@@ -10,6 +10,6 @@ The usage is straightforward:
 
 ``get-monotonic-time`` returns a precise monotonic clock as two values:
 - Seconds since an arbitrary epoch
-- Sub-seconds in ``MONTOONIC-TIME-UNITSPER-SECOND``
+- Sub-seconds in ``MONOTONIC-TIME-UNITS-PER-SECOND``
 
 And that's all!
