@@ -9,7 +9,11 @@
 
 (define-implementation get-precise-time ()
   (cffi:with-foreign-objects ((ft :uint64))
-    (cffi:foreign-funcall "GetSystemTimeAsFileTime" :pointer ft :void)
+    (macrolet ((get-time ()
+                 (if (cffi:foreign-symbol-pointer "GetSystemTimePreciseAsFileTime")
+                     `(cffi:foreign-funcall "GetSystemTimePreciseAsFileTime" :pointer ft :void)
+                     `(cffi:foreign-funcall "GetSystemTimeAsFileTime" :pointer ft :void))))
+      (get-time))
     (let ((ft (cffi:mem-ref ft :uint64)))
       (values (- (truncate ft PRECISE-TIME-UNITS-PER-SECOND)
                  (- ;; Windows-Unix epoch offset
