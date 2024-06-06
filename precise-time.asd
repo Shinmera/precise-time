@@ -12,10 +12,11 @@
                (:file "protocol")
                (:file "posix" :if-feature :unix)
                (:file "windows" :if-feature :windows)
+               (:file "mezzano" :if-feature :mezzano)
                (:file "documentation"))
+  :defsystem-depends-on (:trivial-features)
   :depends-on (:documentation-utils
-               :trivial-features
-               :cffi)
+               (:feature (:not :mezzano) :cffi))
   :in-order-to ((asdf:test-op (asdf:test-op :precise-time/test))))
 
 (asdf:defsystem precise-time/test

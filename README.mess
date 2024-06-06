@@ -13,3 +13,10 @@ The usage is straightforward:
 - Sub-seconds in ``MONOTONIC-TIME-UNITS-PER-SECOND``
 
 And that's all!
+
+## Supported Systems
+The following systems are supported:
+
+- Unix (Linux, BSD, MacOS)
+- Windows
+- Mezzano
