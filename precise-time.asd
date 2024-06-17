@@ -10,7 +10,8 @@
   :serial T
   :components ((:file "package")
                (:file "protocol")
-               (:file "posix" :if-feature :unix)
+               (:file "posix" :if-feature (:and :unix (:not :darwin)))
+               (:file "darwin" :if-feature :darwin)
                (:file "windows" :if-feature :windows)
                (:file "mezzano" :if-feature :mezzano)
                (:file "documentation"))
