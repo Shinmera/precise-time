@@ -10,7 +10,7 @@
     (cffi:with-foreign-objects ((tb :uint32 2))
       (if (= 0 (cffi:foreign-funcall "mach_timebase_info" :pointer tb :int))
           (let ((ticks-to-nanos (/ (cffi:mem-aref tb :uint32 0) (cffi:mem-aref tb :uint32 1))))
-            (* 1000000000 ticks-to-nanos))
+            (floor (* 1000000000 ticks-to-nanos)))
           (error "Failed to get time scale for monotonic time."))))
 
 (define-implementation get-precise-time ()
