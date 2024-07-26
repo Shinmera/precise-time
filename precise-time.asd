@@ -14,6 +14,7 @@
                (:file "darwin" :if-feature :darwin)
                (:file "windows" :if-feature :windows)
                (:file "mezzano" :if-feature :mezzano)
+               (:file "nx" :if-feature :nx)
                (:file "documentation"))
   :defsystem-depends-on (:trivial-features)
   :depends-on (:documentation-utils
