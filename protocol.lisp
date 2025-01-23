@@ -48,3 +48,11 @@
   (let ((time (get-internal-real-time)))
     (values (truncate time INTERNAL-TIME-UNITS-PER-SECOND)
             (mod time INTERNAL-TIME-UNITS-PER-SECOND))))
+
+(define-protocol-fun get-precise-time/double () (double-float)
+  (multiple-value-bind (secs subsecs) (get-precise-time)
+    (+ secs (/ (float subsecs 0d0) PRECISE-TIME-UNITS-PER-SECOND))))
+
+(define-protocol-fun get-monotonic-time/double () (double-float)
+  (multiple-value-bind (secs subsecs) (get-monotonic-time)
+    (+ secs (/ (float subsecs 0d0) MONOTONIC-TIME-UNITS-PER-SECOND))))

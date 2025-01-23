@@ -28,7 +28,13 @@ Signals an error of type QUERY-FAILED if the time could not be fetched
 for whatever reason.
 
 See PRECISE-TIME-UNITS-PER-SECOND
+See GET-PRECISE-TIME/DOUBLE
 See QUERY-FAILED")
+
+  (function get-precise-time/double
+    "Gets the current time in seconds as a double-float.
+
+See GET-PRECISE-TIME")
 
   (function get-monotonic-time
     "Gets a monotonically increasing time with as much precision as possible.
@@ -44,4 +50,10 @@ Signals an error of type QUERY-FAILED if the time could not be fetched
 for whatever reason.
 
 See MONOTONIC-TIME-UNITS-PER-SECOND
-See QUERY-FAILED"))
+See GET-MONOTONIC-TIME/DOUBLE
+See QUERY-FAILED")
+
+  (function get-monotonic-time/double
+    "Gets a monotonically increasing timestamp in seconds as a double-float.
+
+See GET-MONOTONIC-TIME"))
